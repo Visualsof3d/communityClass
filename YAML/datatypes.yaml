@@ -1,0 +1,64 @@
+# Ways to represent String Variables
+name: Rajan Kumar
+about: 'Artist'
+fruit: "Mango"
+
+---
+# Block(pipe) character --> '|'
+bio: |  
+  My name is Rajan Kumar
+  I do 3D stuffs
+  I'm recently learning Devops
+
+# Let's see how the above code will look like when executed
+# bio: My name is Rajan Kumar
+# I do 3D stuffs
+# I'm recently learning Devops
+
+
+---
+# If you have to write in multiple lines but want to show in single line when executed
+# Then use '>' instead of '|'
+learning: >
+  This is not a normal string it
+  spans more than 
+  one line
+  see?
+
+
+# Let's see how really it look like 
+# learning: This is not a normal string it spans more than one line see?
+
+
+---
+# Integers & Boolean
+number: 1234
+marks: 84.11
+boolValue: No  #n, N, On, false, False, FALSE   --> and vice versa for TRUE
+
+
+---
+# Specifing the types by '!!datatype'
+# Int types
+zero: !!int 0
+positiveNum: !!int 41
+negativeNum: !!int -90
+binaryNum: !!int 11111
+hexaNum: !!int 0x43ef74  # lie from 0-9 and a-f
+octalNum: !!int 03271  # lie from 0-7
+exponentialNum: 6.023E56
+
+# Floating Point
+marks: !!float 72.6
+infinite: !!float .inf
+
+
+Not_A_Num: .nan   # NaN
+nullRepresent: !!null Null  # null NULL ~
+~: This is a null key
+
+
+# Time and date
+date: !!timestamp 2003-01-26
+india_time: 2023-10-19T08:53:10 +5:30   # Format: Date-Time-Zone
+no_time_zone: 2023-10-19T08:53:10  

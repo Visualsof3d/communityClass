@@ -1,0 +1,55 @@
+# This is a Key Value Pair, Just like Hashmap
+"apple" : "Apples are red in colour"
+41 : "This is my roll number"
+
+
+
+--- # Yaml file can contain zero, one or many documents and they are seperated by HYPEH(-)
+# List - It is represented by "-" Hyphen
+# - yaml
+# - kubernetes
+# - docker
+
+
+
+---
+# Block style
+key: value
+array:
+  - element1
+  - element2
+nested_object:
+  subKey1: subvalue1
+  subKey2: subvalue2
+
+
+
+---
+# Flow style - It does not use indentation or whitespace to denote nesting, as block style does. 
+# This can make it difficult to read if it contains complex data structures. 
+# The flow style syntax begins with a left curly brace ({), followed by the data structure elements separated by commas (,). 
+# Each element must be on its own line, without any indentation. The last element must also be followed by a right curly brace (}).
+{ 
+  "KEY": "value", 
+  "ARRAY": ["element1", "element2"], 
+  "NESTED_OBJECT": { "subkey1": "subvalue1", "subkey2": "subvalue2" }
+}
+
+
+---
+cities:
+  - new delhi
+  - patna
+---
+cities: [new delhi, patna]
+
+---
+mango: "fruit"
+colour: "yellow"
+---
+{mango: "fruit", colour: "yellow"}
+# Since we are creating key value pair after introducing new document ---
+# That's why we are not getting error
+... # It indicates that the document is ended
+
+
