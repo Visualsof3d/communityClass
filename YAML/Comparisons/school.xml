@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<School>
+		<name>Oxford</name>
+		<principle>Ritu</principle>
+		<Students>
+			<name>Rajan Kumar</name>
+			<branch>PCM</branch>
+			<rollNo>41</rollNo>
+		</Students>
+		<Students>
+			<name>Rishav</name>
+			<branch>PCM</branch>
+			<rollNo>not_Known</rollNo>
+		</Students>
+	</School>
+	<School>
+		<name>Rustamji Institute</name>
+		<principle>Noone</principle>
+		<Students>
+			<name>Rajan Kumar</name>
+			<branch>IT</branch>
+			<rollNo>41</rollNo>
+		</Students>
+		<Students>
+			<name>Pankaj Chota beta</name>
+			<branch>IT</branch>
+			<rollNo>28</rollNo>
+		</Students>
+	</School>
+</root>

@@ -1,0 +1,133 @@
+# Sequence is lik arrays, list in other language
+students: !!seq
+  - name
+  - rollNo
+  - marks
+
+---
+# You can also write sequence like this
+student: [name, rollNo, marks]
+
+
+# some of the keys of the sequence will be empty known as - Sparse Sequence
+spare seq:
+  - look
+  - this
+  - is 
+  - empty
+  - key
+  - list
+  - 
+  - Null
+
+
+---
+# Nested Sequence
+-
+  - red
+  - green
+  - blue
+-
+  - name
+  - marks
+  - rollNo
+
+# Let's see how this look in JSON
+# [
+#   [
+#     "red",
+#     "green",
+#     "blue"
+#   ],
+#   [
+#     "name",
+#     "marks",
+#     "rollNo"
+#   ]
+# ]
+---
+
+# Nested Mappings: map within a map
+# !!map
+name: Rajan Kumar
+role: 
+  age: 22
+  job: student
+---
+name: Rajan Kumar
+role: {age: 22, job: student}
+
+
+
+
+# pairs: keys may have duplicate values or multiple values
+# !!pairs
+
+pair_example: !!pairs
+  - role: student
+  - role: artist
+  - role: developer
+  - role: designer
+---
+# same as
+pair_example: !!pairs [role: student, role: artist, role: developer, role: designer]
+# How to access then, it is like accessing the array, this will be an array of hashtable
+
+
+
+
+# If I've to store unique value then set comes in picture
+# !!set
+names: !!set
+  ? Rajan
+  ? Devdutt
+  ? Aayush
+  # ? Rajan - again if i write, this is not allowed
+
+
+
+
+# dictionary !!omap
+people: !!omap
+  - Rajan:
+      name: Rajan Kumar
+      age: 22
+      friend: Null
+  - Devdut:
+      name: Devdutt Muchhad
+      age: 05
+      friend: aayush, rajan
+
+
+
+---
+person1:
+  name: Rajan
+  fav_fruit: custard apple
+  fav_language: C++
+
+person2:
+  name: Devdutt
+  fav_fruit: custard apple
+  fav_language: C++
+
+---
+# 2 properties are getting repeatative
+# reusing some properties using anchors
+likings: &likes
+  fav_fruit: custard apple
+  fav_language: C++
+
+person1:
+  name: Rajan
+  <<: *likes   # Syntax: <<(put those thing here which are present in anchor) likes(anchor)
+
+person2:
+  name: Devdutt
+  <<: *likes
+
+# To overwrite some properties
+person3:
+  name: Aayush
+  <<: *likes
+  fav_fruit: Banana

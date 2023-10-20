@@ -1,0 +1,19 @@
+School: 
+- name: Oxford
+  principle: Ritu
+  Students:
+   - name: Rajan Kumar
+     branch: PCM
+     rollNo: 41
+   - name: Rishav
+     branch: PCM
+     rollNo: not_known
+- name: Rustamji Institute
+  principle: Noone
+  Students:
+   - name: Rajan Kumar
+     branch: IT 
+     rollNo: 41
+   - name: Pankaj Chota beta
+     branch: IT 
+     rollNo: 28

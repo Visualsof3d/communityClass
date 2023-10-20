@@ -1,4 +1,6 @@
-# This is a Key Value Pair, Just like Hashmap
+# Scalars are what YAML calls basic values like numbers or strings
+# This is a Key Value Pair, Just like Map
+# Mapping Scalars to Scalars
 "apple" : "Apples are red in colour"
 41 : "This is my roll number"
 
@@ -6,9 +8,10 @@
 
 --- # Yaml file can contain zero, one or many documents and they are seperated by HYPEH(-)
 # List - It is represented by "-" Hyphen
-# - yaml
-# - kubernetes
-# - docker
+# Sequence of Scalars
+- yaml
+- kubernetes
+- docker
 
 
 
