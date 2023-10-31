@@ -1,0 +1,95 @@
+# Docker Commands
+
+`docker ps`       Show all the running container.
+
+`docker ps -a`      Shows all the stopped and running container.
+
+`docker images`      Show all the downloaded images present in local machine.
+
+`docker images -q`    Only show docker image-ID
+
+`docker container ls`      Shows all the running container.
+
+
+
+
+`docker pull <image_name>`     Pull images to your local machine from registry or docker hub without running.
+
+`docker run -it <image_name>`     It will run the image and if it is not present in local machine then it will download from docker hub or registry and run instantly. 
+
+`docker run -it <image_name>:<version>`  If you want to run a specific version of the image. e.g. docker run -it ubuntu:16.04. ( -it ) interactive environment means don’t exit out of it.
+
+`docker container exec -it <container_ID> bash`     The bash shell should be attached to this running container. This won’t work if the container isn’t running.
+
+
+
+
+`docker start <container_ID>`     Start the container, which I previously stopped.
+
+`docker stop <container_ID>`      Stop the running container.
+
+
+
+
+`docker rmi <image_name>`       Remove the image 
+
+`docker rmi $(docker images -q)`      Remove all the images present on your local machine.
+
+`docker rm <container_ID>`       Remove that specific container and it must be exited or stopped.
+
+`docker container prune`       🚨Deletes all the stopped containers with confirmation.
+
+`docker container prune -f`        🚨Remove all the stopped containers without confirmation.
+
+
+
+
+`docker inspect <container_ID>`       Shows all the information of the container.
+
+`docker log <container_ID>`        Display all the changes made in that container, log comes with a timer feature.
+
+
+
+### Some Interesting Stuffs
+
+---
+
+`docker run ubuntu echo Hey`    Run ubuntu and type echo Hey command in ubuntu terminal, basically in detach mode. Detach mode - run in background.
+
+`docker run -d <image_name>`     This also work in detach mode.
+
+---
+
+
+💡 So what if I want to access the container in my local machine
+
+`docker run -p 8080:80 nginx`    
+
+Let’s understand this: 
+
+- -p specify port.
+- 8080 is my local host port, where I’m going to access that container, like a bridge to 80 port
+- 80 is default port of nginx and it is given to container and it is connected to my [`localhost:8080`](http://localhost:8080) port
+- image-name, run that image on port 80 of container and connect it to my local host port 8080 so that I can access it
+
+Whatever traffic inside the container nginx port 80, forward all the request to the port of local host 8080 ( like a tunnel ).
+
+
+---
+
+
+💡 So what if I want to share the project or changes I made to my friend.
+
+`docker run -it ubuntu`
+
+….done some changes.
+
+`docker commit -m “<message>” <container_ID> <imageNameYouWantToGive>:<version>`
+
+now if you do `docker images` that image will show on your local machine.
+now you share that image with your friend.
+and he run the command
+
+`docker run -it <imageNameYouHaveGiven>:<version>`
+
+it will run on his machine
