@@ -1,2 +1,3 @@
-Hey! This is where I gather stuff to learn. I'm exploring and learning cool things.
+Hey! I'm exploring and learning new cool things.
+<br/>
 Feel free to check them out too!
